@@ -1,7 +1,7 @@
 require('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose');
-
+const requireDir = require('require-dir');
 /**
  * iniciando o App
  */
@@ -16,11 +16,15 @@ mongoose.connect(process.env.MONGO_URL, {
 });
 
 /**
+ * Carrega os Schemas
+ */
+requireDir('./src/models');
+
+const Product = mongoose.model('Product');
+/**
  * iniciando as rotas
  */
-app.get('/', (req, res) => {
-  res.send(process.env.MONGO_URL);
-});
+app.use('/api', require('./src/routes'));
 
 /**
  * startando servidor na porta indicada
