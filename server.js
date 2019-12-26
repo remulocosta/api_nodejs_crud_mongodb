@@ -1,7 +1,7 @@
 require('dotenv/config');
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose'); 
+const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 /**
  * iniciando o App
@@ -15,7 +15,7 @@ app.use(cors());
  */
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 /**
@@ -23,7 +23,6 @@ mongoose.connect(process.env.MONGO_URL, {
  */
 requireDir('./src/models');
 
-const Product = mongoose.model('Product');
 /**
  * iniciando as rotas
  */
