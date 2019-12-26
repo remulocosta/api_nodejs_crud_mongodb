@@ -1,5 +1,4 @@
 {
-  
   "name": "api_nodejs",
   "version": "1.0.0",
   "main": "index.js",
@@ -8,9 +7,13 @@
   "description": "Aplicação NodeJS",
   "keywords": [],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
