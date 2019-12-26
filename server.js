@@ -6,6 +6,7 @@ const requireDir = require('require-dir');
  * iniciando o App
  */
 const app = express();
+app.use(express.json());
 
 /**
  * iniciando o banco de dados mogodb
